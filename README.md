@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+## Setup
+
+### Font - Lexend
+
 ```sh
 npm create astro@latest -- --template basics
 ```

@@ -1,11 +1,16 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="Forcythe - Your Partner in Scalable Business Growth | Digital Solutions Expert"
+>
+  <Navbar />
+  <section class="min-h-lvh mt-28 text-white py-8 px-28">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt illum
+    repellat aperiam cumque nobis, numquam, repellendus ipsum repudiandae beatae
+    corporis rem? Cupiditate, in. Quaerat quod aperiam vel quam porro
+    reprehenderit!
+  </section>
+</BaseLayout>
