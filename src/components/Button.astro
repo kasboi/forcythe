@@ -1,5 +1,9 @@
-<button>
-  <span>Book a Call</span>
+---
+const { children } = Astro.props;
+---
+
+<button class="text-black">
+  <span><slot /></span>
   <div></div>
 </button>
 

@@ -1,0 +1,45 @@
+---
+import Image from 'astro/components/Image.astro';
+import stacImg from '../assets/stac.svg';
+import activityImg from '../assets/activity.svg';
+import aficaFundImg from '../assets/africaFund.svg';
+import starksImg from '../assets/starks.svg';
+import phoneImg from '../assets/phone.svg';
+---
+
+<div class="marquee_reverse overflow-hidden relative">
+  <div class="marquee_reverse-content flex">
+    <Image src={stacImg} alt="Company images" />
+    <Image src={activityImg} alt="Company images" />
+    <Image src={aficaFundImg} alt="Company images" />
+    <Image src={starksImg} alt="Company images" />
+    <Image src={phoneImg} alt="Company images" />
+  </div>
+</div>
+
+<style>
+  .marquee_reverse-content {
+    animation: scrollingReverse 24s linear infinite;
+  }
+
+  @keyframes scrollingReverse {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<script>
+  const marquee_reverseContent = document.querySelector(
+    '.marquee_reverse-content',
+  )!;
+
+  for (let i = 0; i < 5; i++) {
+    marquee_reverseContent.appendChild(
+      marquee_reverseContent.children[i].cloneNode(true),
+    );
+  }
+</script>

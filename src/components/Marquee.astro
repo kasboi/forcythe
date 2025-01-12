@@ -1,0 +1,41 @@
+---
+import Image from 'astro/components/Image.astro';
+import stacImg from '../assets/stac.svg';
+import activityImg from '../assets/activity.svg';
+import aficaFundImg from '../assets/africaFund.svg';
+import starksImg from '../assets/starks.svg';
+import phoneImg from '../assets/phone.svg';
+---
+
+<div class="marquee overflow-hidden relative">
+  <div class="marquee-content flex">
+    <Image src={stacImg} alt="Company images" />
+    <Image src={activityImg} alt="Company images" />
+    <Image src={aficaFundImg} alt="Company images" />
+    <Image src={starksImg} alt="Company images" />
+    <Image src={phoneImg} alt="Company images" />
+  </div>
+</div>
+
+<style>
+  .marquee-content {
+    animation: scrolling 24s linear infinite;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<script>
+  const marqueeContent = document.querySelector('.marquee-content')!;
+
+  for (let i = 0; i < 5; i++) {
+    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  }
+</script>
