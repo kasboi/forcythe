@@ -1,16 +1,62 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
+
+import Test from '../components/Test.astro';
+
+import Button from '../components/Button.astro';
+import Marquee from '../components/Marquee.astro';
+import MarqueeReverse from '../components/MarqueeReverse.astro';
+
+import Stories from '../components/Stories.jsx';
 ---
 
 <BaseLayout
   title="Forcythe - Your Partner in Scalable Business Growth | Digital Solutions Expert"
 >
   <Navbar />
-  <section class="min-h-lvh mt-28 text-white py-8 px-28">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt illum
-    repellat aperiam cumque nobis, numquam, repellendus ipsum repudiandae beatae
-    corporis rem? Cupiditate, in. Quaerat quod aperiam vel quam porro
-    reprehenderit!
-  </section>
+  <main>
+    <section class="mt-28 px-28">
+      <div
+        class="flex flex-col gap-12 items-start py-12 px-12 bg-white/10 rounded-[60px]"
+      >
+        <h1 class="text-7xl max-w-4xl leading-none">
+          We build <span class="text-blue-500">products</span> that shape a better
+          future
+        </h1>
+        <p class="max-w-3xl text-lg text-gray-400">
+          We're the architects of digital excellence across industries. We
+          redefine business with cutting-edge digital strategies that invokes
+          sector-wide transformation.
+        </p>
+        <Button>Book a Call</Button>
+      </div>
+    </section>
+    <section class="py-12">
+      <h2 class="text-5xl text-center">
+        Success in <span class="text-blue-500">Motion</span> – Our clients’ journey
+      </h2>
+      <!-- MARQUEE CONTAINER -->
+      <div class="flex flex-col gap-8">
+        <Marquee />
+        <MarqueeReverse />
+      </div>
+    </section>
+    <section class="py-12 px-36">
+      <h2 class="text-5xl text-center max-w-screen-lg mx-auto my-8">
+        Discover the <span class="text-blue-500">transformative stories</span> of
+        startups that scaled new heights with us
+      </h2>
+      <Stories client:load />
+    </section>
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    background-image: url('../assets/header-background.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 85%;
+  }
+</style>

@@ -1,0 +1,44 @@
+<div class="fade-in text-white text-3xl">I love this framework</div>
+
+<style is:inline>
+  .fade-in span {
+    opacity: 0;
+    display: inline-block;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+    /* transform: translateY(10px); */
+  }
+
+  .fade-in span.show {
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
+</style>
+
+<script>
+  const fadeInText = document.querySelector('.fade-in')!;
+  console.log('i am here');
+
+  if (fadeInText.textContent) {
+    const words = fadeInText.textContent.split(' '); // Split the text into words
+    console.log(words);
+
+    // Replace the content with spans for each word
+    fadeInText.innerHTML = words
+      .map((word) => `<span>${word}</span>`)
+      .join(' ');
+
+    const spans = fadeInText.querySelectorAll('span');
+
+    // Animate each word with a delay
+    spans.forEach((span, index) => {
+      setTimeout(
+        () => {
+          span.classList.add('show');
+        },
+        (index + 0.1) * 750,
+      ); // Delay of 300ms between words
+    });
+  }
+</script>
