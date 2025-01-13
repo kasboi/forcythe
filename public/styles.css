@@ -1,0 +1,21 @@
+.story-heading {
+  opacity: 0;
+  animation: fadeIn 2s 1s forwards;
+}
+
+.story-paragraph .word {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.5s;
+}
+
+.story-span {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

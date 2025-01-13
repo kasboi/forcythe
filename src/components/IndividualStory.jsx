@@ -13,7 +13,7 @@ const IndividualStory = ({ heading, paragraph, span, img, position }) => {
     wordElements.forEach((word, index) => {
       setTimeout(() => {
         word.style.opacity = 1;
-      }, index * 100);
+      }, index * 200);
     });
 
     setTimeout(() => {
