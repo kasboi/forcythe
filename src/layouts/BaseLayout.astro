@@ -2,7 +2,6 @@
 // Supports weights 100-900
 import '@fontsource-variable/lexend';
 const { title } = Astro.props;
-import style from '../assets/styles.css';
 ---
 
 <!doctype html>
@@ -10,7 +9,7 @@ import style from '../assets/styles.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href={style} />
+    <link rel="stylesheet" href="../assets/styles.css" />
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

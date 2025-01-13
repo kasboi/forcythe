@@ -1,4 +1,21 @@
-# Astro Starter Kit: Basics
+# Forcythe Front-End Developer Take-Home Challenge
+
+## Overview
+
+This project is a take-home assignment for the Front-End Developer role at Forcythe. Your task is to design and build the front page of Forcythe.
+
+## Key Details
+
+- **Challenge Duration:** 2 days (48 hours from receiving this email)
+- **Live Demo Requirement:** Deploy your solution to a live link (e.g., GitHub Pages, Vercel, Netlify) to be tested against industry standards.
+
+## Evaluation Criteria
+
+1. **Responsiveness:** Your design should work seamlessly across devices (mobile, tablet, desktop).
+2. **Visual Appeal:** Creativity and adherence to modern UI/UX practices.
+3. **Code Quality:** Clean, well-structured, and commented code.
+4. **Performance:** Optimized for speed and efficiency.
+5. **Accessibility:** Alignment with accessibility best practices (e.g., WCAG standards).
 
 ## Setup
 
