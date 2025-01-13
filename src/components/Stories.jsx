@@ -3,7 +3,7 @@ import IndividualStory from './IndividualStory';
 
 const Stories = () => {
   const [curImg, setCurImg] = useState(0);
-  const intervalTime = 10000;
+  const intervalTime = 7000;
   const totalImages = 5;
 
   useEffect(() => {

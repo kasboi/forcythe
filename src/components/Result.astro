@@ -88,7 +88,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const duration = 1000; // Duration of the animation in milliseconds
+    const duration = 1000;
     const numbers = document.querySelectorAll('.number');
 
     const animateNumbers = (number: Element) => {
@@ -103,7 +103,7 @@
           clearInterval(interval);
         }
         number.textContent = Math.floor(currentValue) + '+';
-      }, 16); // Approximate 60fps
+      }, 16); 
     };
 
     const observer = new IntersectionObserver(
@@ -111,12 +111,12 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animateNumbers(entry.target);
-            observer.unobserve(entry.target); // Stop observing once the animation is triggered
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 },
-    ); // Trigger when 10% of the element is visible
+    ); 
 
     numbers.forEach((number) => {
       observer.observe(number);

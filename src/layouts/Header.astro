@@ -26,19 +26,19 @@ import Button from '../components/Button.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const fadeInWords = (element: HTMLElement) => {
-      const words = element.textContent ? element.textContent.split(' ') : [];
-      element.innerHTML = words
-        .map((word) => `<span class="word">${word}</span>`)
+    const fadeIntexts = (element: HTMLElement) => {
+      const texts = element.textContent ? element.textContent.split(' ') : [];
+      element.innerHTML = texts
+        .map((text) => `<span class="text">${text}</span>`)
         .join(' ');
 
-      const wordElements = element.querySelectorAll('.word');
-      wordElements.forEach((word: HTMLElement, index) => {
-        word.style.opacity = '0';
+      const textElements = element.querySelectorAll('.text');
+      textElements.forEach((text, index) => {
+        text.style.opacity = '0';
         setTimeout(() => {
-          word.style.opacity = '1';
-          word.style.transition = 'opacity 0.5s';
-        }, index * 200);
+          text.style.opacity = '1';
+          text.style.transition = 'opacity 0.5s';
+        }, index * 100);
       });
     };
 
@@ -46,16 +46,16 @@ import Button from '../components/Button.astro';
     const headerDescription = document.getElementById('header-description');
 
     if (headerTitle) {
-      fadeInWords(headerTitle);
+      fadeIntexts(headerTitle);
     }
     if (headerDescription) {
-      fadeInWords(headerDescription);
+      fadeIntexts(headerDescription);
     }
   });
 </script>
 
 <style>
-  .word {
+  .text {
     display: inline-block;
     opacity: 0;
   }
