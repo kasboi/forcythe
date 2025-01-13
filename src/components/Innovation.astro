@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import layerIcon from '../assets/layers-three.svg';
+const features = [
+  {
+    intro: 'Experience',
+    text: 'Decades of collective wisdom. Leverage our extensive experience to avoid common pitfalls and accelerate your business growth.',
+  },
+  {
+    intro: 'Quick Support',
+    text: 'We are your reliable partner, always there when you need us, ensuring smooth operations at every stage of your growth.',
+  },
+  {
+    intro: 'Cost Savings',
+    text: 'Maximising impact, minimising costs efficiency is key. We provide cost-effective solutions without compromising on quality.',
+  },
+];
+---
+
+<section
+  class="px-28 py-20 lg:px-16 md:px-8 sm:px-6 md:py-8 sm:py-6"
+  style="background:linear-gradient(0deg, rgb(12, 38, 69) 20%, rgb(3, 5, 22) 70%);"
+>
+  <div
+    class="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[2.6rem] lg:leading-[3rem] mb-10 text-accent2 text-center text-[#B3D0F2]"
+  >
+    <h2>Your best call for B2B/B2C product innovation</h2>
+  </div>
+  <!-- grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8 -->
+  <div class="flex justify-between gap-8 md:flex-col">
+    {
+      features.map((feature) => (
+        <div class="border-spinner relative flex border-0 transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit  text-left">
+          <div class="w-auto text-white z-10 bg-transparent">
+            <div class="w-full bg-[#030516]  p-8 sm:p-10 hover:shadow-gray-400 custom-animate">
+              <div class="w-fit p-2 bg-[#60A6E7] bg-opacity-60 mb-5">
+                <Image src={layerIcon} alt="icon" width={30} height={30} />
+              </div>
+              <h4 class="text-2xl font-medium mb-5">{feature.intro}</h4>
+              <div class="mb-0 text-gray-400 text-[17.5px]">
+                <span>{feature.text}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style is:global>
+  .border-spinner {
+    --border-width: 2px;
+    --radius: 24px;
+    border: var(--border-width) solid;
+    border-image: conic-gradient(
+        from var(--angle),
+        #064386 80%,
+        #cce7ff 88%,
+        #cce7ff 92%,
+        #064386 100%
+      )
+      1;
+    /* border-radius: 24px; */
+    animation: spin 3s linear infinite running;
+  }
+
+  @supports not (background: paint(something)) {
+    .border-spinner {
+      border-image: conic-gradient(
+          #064386 80%,
+          #cce7ff 88%,
+          #cce7ff 92%,
+          #064386 100%
+        )
+        1;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0turn;
+  }
+
+  @keyframes spin {
+    to {
+      --angle: 1turn;
+    }
+  }
+</style>

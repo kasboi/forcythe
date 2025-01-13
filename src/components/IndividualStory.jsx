@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const IndividualStory = ({ heading, paragraph, span, img }) => {
+const IndividualStory = ({ heading, paragraph, span, img, position }) => {
   useEffect(() => {
     const paragraphElement = document.querySelector('.story-paragraph');
     const words = paragraphElement.textContent.split(' ');
@@ -23,7 +23,7 @@ const IndividualStory = ({ heading, paragraph, span, img }) => {
 
   return (
     <div
-      className="bg-blue-950/50 flex justify-between gap-4 px-6 py-6 rounded-3xl w-[50%] mt-5"
+      className={`bg-blue-950/50 flex sm:flex-col justify-between gap-4 px-6 py-6 rounded-3xl w-[50%] 2xl:w-[65%] xl:w-[75%] md:w-[100%] mt-5 relative ${position} lg:left-0`}
       style={{ minHeight: '300px' }}
     >
       <div className="flex flex-col gap-6">

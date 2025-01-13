@@ -1,17 +1,54 @@
 ---
 import { Image } from 'astro:assets';
 import forcytheLogo from '../assets/forcythe_logo.svg';
+import menuIcon from '../assets/menu.svg';
 import Button from './Button.astro';
 ---
 
-<nav class="backdrop-blur py-8 px-28 flex items-center fixed top-0 w-full">
-  <Image src={forcytheLogo} alt="Forcythe Logo" class="mr-20" />
-  <ul class="flex mr-auto gap-4">
+<nav
+  class="backdrop-blur py-8 md:py-5 px-28 lg:px-16 md:px-10 flex md:justify-between items-center fixed z-[10000] top-0 w-full"
+>
+  <Image src={forcytheLogo} alt="Forcythe Logo" class="mr-20 lg:mr-4" />
+  <ul class="flex mr-auto gap-4 md:hidden">
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
     <li><a href="#">Portfolio</a></li>
     <li><a href="#">Studio</a></li>
     <li><a href="#">Foundation</a></li>
   </ul>
-  <Button>Book a Call</Button>
+  <div class="md:hidden">
+    <Button>Book a Call</Button>
+  </div>
+  <button
+    class="bg-blue-800/40 p-2.5 hidden md:flex justify-center items-center rounded-md"
+    id="menu-button"
+  >
+    <Image src={menuIcon} alt="menu icon" class="w-5 h-5" />
+  </button>
 </nav>
+
+<div
+  id="menu-card"
+  class="border-spinner min-w-52 bg-slate-900 hidden fixed top-24 right-8 shadow-lg px-5 py-8 z-[9999]"
+>
+  <ul class="flex flex-col gap-6">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Studio</a></li>
+    <li><a href="#">Foundation</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menu-button')!;
+    const menuCard = document.getElementById('menu-card')!;
+
+    menuButton.addEventListener('click', () => {
+      menuCard.classList.toggle('hidden');
+    });
+  });
+</script>

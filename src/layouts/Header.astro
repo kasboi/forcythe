@@ -1,0 +1,62 @@
+---
+import Button from '../components/Button.astro';
+---
+
+<section class="mt-28 px-28 lg:px-16 md:px-10 sm:px-4">
+  <div
+    class="flex flex-col gap-12 lg:gap-8 items-start py-12 lg:py-8 px-12 lg:px-8 bg-white/10 rounded-[60px] md:rounded-3xl"
+  >
+    <h1
+      id="header-title"
+      class="text-7xl lg:text-5xl md:text-4xl sm:text-3xl max-w-4xl leading-none lg:leading-snug"
+    >
+      We build <span class="text-blue-500">products</span> that shape a better future
+    </h1>
+    <p
+      id="header-description"
+      class="max-w-3xl text-lg md:text-base text-gray-400"
+    >
+      We're the architects of digital excellence across industries. We redefine
+      business with cutting-edge digital strategies that invokes sector-wide
+      transformation.
+    </p>
+    <Button>Book a Call</Button>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeInWords = (element: HTMLElement) => {
+      const words = element.textContent ? element.textContent.split(' ') : [];
+      element.innerHTML = words
+        .map((word) => `<span class="word">${word}</span>`)
+        .join(' ');
+
+      const wordElements = element.querySelectorAll('.word');
+      wordElements.forEach((word: HTMLElement, index) => {
+        word.style.opacity = '0';
+        setTimeout(() => {
+          word.style.opacity = '1';
+          word.style.transition = 'opacity 0.5s';
+        }, index * 200);
+      });
+    };
+
+    const headerTitle = document.getElementById('header-title');
+    const headerDescription = document.getElementById('header-description');
+
+    if (headerTitle) {
+      fadeInWords(headerTitle);
+    }
+    if (headerDescription) {
+      fadeInWords(headerDescription);
+    }
+  });
+</script>
+
+<style>
+  .word {
+    display: inline-block;
+    opacity: 0;
+  }
+</style>
